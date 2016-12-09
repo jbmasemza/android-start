@@ -460,7 +460,7 @@ public class MainActivity extends AppCompatActivity implements
                         payload);
                 // Check how many invitations were sent and log.
                String[] ids = AppInviteInvitation.getInvitationIds(resultCode, data);
-                for (String id : ids) {
+                if ( ids != null ) {
                     Log.d(TAG, "onActivityResult: sent invitation " + ids.length);
                 }
       /*  if (resultCode == REQUEST_INVITE) {
@@ -495,7 +495,7 @@ public class MainActivity extends AppCompatActivity implements
                           Uri downloadUrl = taskSnapshot.getDownloadUrl();
                             FriendlyMessage friendlymessage =
                                     new FriendlyMessage(null, mUsername, downloadUrl.toString());
-                            mFirebaseDatabaseReference.push().setValue(friendlymessage);
+                            mMessageDatabaseReference.push().setValue(friendlymessage);
 
                         }
                     });
@@ -519,6 +519,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
     }
+
 
 }
 
