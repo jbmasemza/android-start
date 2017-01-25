@@ -490,7 +490,6 @@ public class MainActivity extends AppCompatActivity implements
 
             photoRef.putFile(seltectedImageUri).addOnSuccessListener
                     (this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                           Uri downloadUrl = taskSnapshot.getDownloadUrl();
                             FriendlyMessage friendlymessage =
